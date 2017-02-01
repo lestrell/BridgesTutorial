@@ -1,6 +1,5 @@
 package bst;
 
-import bridges.base.BSTElement;
 import bridges.connect.Bridges;
 import bst.shaffer.BST;
 import com.google.gson.Gson;
@@ -13,7 +12,7 @@ import util.YandexStaticMap;
 import java.io.FileNotFoundException;
 
 /**
- * Created by PADINGTON on 1/31/2017.
+ * Created by Lucas Estrella on 1/31/2017.
  */
 public class Main {
 
@@ -24,11 +23,7 @@ public class Main {
 
         JsonObject jsonData = DownloadJSONHelper.downloadJSONHelper("http://earthquakes-uncc.herokuapp.com/eq/latest/100");
 
-        System.out.println(jsonData.getAsJsonArray("Earthquakes").toString());
-
-        Earthquake[] earthquakes = null;
-
-        BSTElement<Double,Earthquake> el0 = null;
+        Earthquake[] earthquakes;
 
         BST<Double,Earthquake> bst = new BST<Double, Earthquake>();
 
@@ -37,9 +32,6 @@ public class Main {
             earthquakes = new Gson().fromJson(jsonData.getAsJsonArray("Earthquakes"), Earthquake[].class);
 
             for(int i = 0; i < earthquakes.length; i++){
-                System.out.println(earthquakes[i].getProperties().getTitle());
-
-//                String url = GoogleMapStaticApi.getStaticMapUrl(earthquakes[i].getGeometry().getCoordinates()[1],earthquakes[i].getGeometry().getCoordinates()[0]);
                 String url = new YandexStaticMap()
                                 .reset()
                                 .setLatitude(earthquakes[i].getGeometry().getCoordinates()[0])

@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by PADINGTON on 1/31/2017.
+ * Created by Lucas Estrella on 1/31/2017.
  */
 public class Earthquake
 {

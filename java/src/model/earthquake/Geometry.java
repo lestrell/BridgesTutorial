@@ -1,7 +1,7 @@
 package model.earthquake;
 
 /**
- * Created by PADINGTON on 1/31/2017.
+ * Created by Lucas Estrella on 1/31/2017.
  */
 public class Geometry
 {
@@ -27,11 +27,5 @@ public class Geometry
     public void setCoordinates (String[] coordinates)
     {
         this.coordinates = coordinates;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [type = "+type+", coordinates = "+coordinates+"]";
     }
 }

@@ -3,7 +3,7 @@ package util;
 import com.sun.istack.internal.Nullable;
 
 /**
- * Created by PADINGTON on 1/31/2017.
+ * Created by Lucas Estrella on 1/31/2017.
  */
 public class GoogleMapStaticApi {
 

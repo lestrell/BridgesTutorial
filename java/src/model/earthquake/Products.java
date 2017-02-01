@@ -1,7 +1,7 @@
 package model.earthquake;
 
 /**
- * Created by PADINGTON on 1/31/2017.
+ * Created by Lucas Estrella on 1/31/2017.
  */
 public class Products
 {
@@ -15,11 +15,5 @@ public class Products
     public void setString (String[] String)
     {
         this.String = String;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [String = "+String+"]";
     }
 }
