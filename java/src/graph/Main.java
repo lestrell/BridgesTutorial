@@ -53,21 +53,47 @@ public class Main {
             videoGames = new Gson().fromJson(jsonData.getAsJsonArray("data"), VideoGame[].class);
             for(int i = 0; i < videoGames.length && i < 2500; i++){
 //                System.out.println(videoGames[i].getGame());
-                graph.addVertex(videoGames[i].getGame(),videoGames[i]);
-                graph.addVertex(videoGames[i].getPlatform(),videoGames[i]);
+                graph
+                    .addVertex(videoGames[i].getGame(),videoGames[i]);
+                graph
+                    .addVertex(videoGames[i].getPlatform(),videoGames[i]);
 
-                graph.addEdge(videoGames[i].getGame(), videoGames[i].getPlatform(), (int)videoGames[i].getRating() * 3);
-                graph.addEdge(videoGames[i].getPlatform(), videoGames[i].getGame(), (int)videoGames[i].getRating() * 3);
+                graph.addEdge(
+                                videoGames[i].getGame(),
+                                videoGames[i].getPlatform(),
+                                (int)videoGames[i].getRating() * 3
+                     );
+                graph.addEdge(
+                                videoGames[i].getPlatform(),
+                                videoGames[i].getGame(),
+                                (int)videoGames[i].getRating() * 3
+                     );
+
             }
 
 
             for(String key : graph.getVertices().keySet()){
                 if(gamePlatformColors.containsKey(graph.getVertices().get(key).getValue().getPlatform())){
-                    graph.getVertices().get(key).getVisualizer().setColor(gamePlatformColors.get(graph.getVertices().get(key).getValue().getPlatform()));
+                    graph
+                            .getVertices()
+                            .get(key)
+                            .getVisualizer()
+                            .setColor(gamePlatformColors
+                                        .get(graph
+                                                .getVertices()
+                                                .get(key)
+                                                .getValue()
+                                                .getPlatform()
+                                        )
+                            );
                     graph.getVertices().get(key).setLabel(graph.getVertices().get(key).getValue().getLabel());
 
                 }
+
+                break;
             }
+
+
 
 
             //pass graph

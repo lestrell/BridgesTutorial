@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 public class GamePlatformRatingRelation {
 
-    private static HashMap<Integer, String> ratigngColors = new HashMap<Integer, String>(){{
+    private static HashMap<Integer, String> ratingColors = new HashMap<Integer, String>(){{
         put(1, "green");
         put(2, "green");
         put(3, "black");
@@ -53,13 +53,13 @@ public class GamePlatformRatingRelation {
             }
 
             for(String key : graph.getVertices().keySet()){
-                if(ratigngColors.containsKey((int)graph.getVertices().get(key).getValue().getRating())){
+                if(ratingColors.containsKey((int)graph.getVertices().get(key).getValue().getRating())){
                     graph
                         .getVertices()
                         .get(key)
                         .getVisualizer()
                         .setColor(
-                                ratigngColors
+                                ratingColors
                                         .get(
                                                 (int)graph.getVertices()
                                                         .get(key)

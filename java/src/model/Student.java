@@ -3,7 +3,7 @@ package model;
 /**
  * Created by Lucas Estrella on 1/31/2017.
  */
-public class StudentInfo {
+public class Student {
     private String studentID,
                    fullName,
                    program,
@@ -11,6 +11,16 @@ public class StudentInfo {
                    dislikeColor,
                    favoriteColor,
                    avatar;
+
+    private boolean visited;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 
     private double studentCreditHours;
 
@@ -20,14 +30,14 @@ public class StudentInfo {
      * @param program
      * @param email
      */
-    public StudentInfo(String studentID,
-                       String fullName,
-                       String program,
-                       String email,
-                       String dislikeColor,
-                       String favoriteColor,
-                       double studentCreditHours,
-                       String avatar) {
+    public Student(String studentID,
+                   String fullName,
+                   String program,
+                   String email,
+                   String dislikeColor,
+                   String favoriteColor,
+                   double studentCreditHours,
+                   String avatar) {
         this.studentID = studentID;
         this.fullName = fullName;
         this.program = program;
@@ -132,6 +142,22 @@ public class StudentInfo {
 
     public void setStudentCreditHours(double studentCreditHours) {
         this.studentCreditHours = studentCreditHours;
+    }
+
+    public String getStudentLabel() {
+        String $label;
+        $label =
+                                           fullName      +  "\n"   +
+                               "Email: " + email         +  "\n"   +
+                             "Program: " + program       +  "\n"   +
+                          "Student ID: " + studentID     +  "\n"   +
+                      "Favorite Color: " + favoriteColor +  "\n";
+
+        if(avatar != null)
+            $label += "<img width='100' src='" + avatar        +  "'/>";
+
+
+        return $label;
     }
 }
 

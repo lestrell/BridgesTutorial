@@ -33,11 +33,11 @@ public class Main {
 
             for(int i = 0; i < earthquakes.length; i++){
                 String url = new YandexStaticMap()
-                                .reset()
+                                .Builder()
                                 .setLatitude(earthquakes[i].getGeometry().getCoordinates()[0])
                                 .setLongitude(earthquakes[i].getGeometry().getCoordinates()[1])
                                 .setSize(null)
-                                .setZoom("5 ")
+                                .setZoom("5")
                                 .build();
 
                 earthquakes[i].setMapURl(url.replace("https","http"));
